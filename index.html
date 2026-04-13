@@ -35,6 +35,42 @@
         <div class="multiplier-btn" data-mult="8">8x</div>
     </div>
     <div class="clear-btn" id="clear-btn">🧹 Clear</div>
+    <div class="mode-menu" id="mode-menu">
+        <div class="menu-label">🎮 Mode</div>
+        <div class="mode-btn active" data-mode="normal">🍌 Normal</div>
+        <div class="mode-btn" data-mode="freefall">🕳️ Freefall</div>
+        <div class="mode-btn" data-mode="zerograv">🌀 Zero-G</div>
+        <div class="mode-btn" data-mode="volcano">🌋 Volcano</div>
+        <div class="mode-btn" data-mode="gravmouse">🧲 Gravity</div>
+    </div>
+    <div class="score-btn" id="score-btn">🏆</div>
+
+    <!-- Scoreboard Overlay -->
+    <div class="scoreboard-overlay" id="scoreboard-overlay">
+        <div class="scoreboard-panel">
+            <div class="scoreboard-header">
+                <h2>🏆 Scoreboard</h2>
+                <div class="scoreboard-close" id="scoreboard-close">✕</div>
+            </div>
+            <div class="scoreboard-entries" id="scoreboard-entries"></div>
+            <div class="scoreboard-add">
+                <input type="text" id="add-name" placeholder="Friend's name" maxlength="15">
+                <input type="number" id="add-score" placeholder="Score" min="0">
+                <button id="add-friend-btn">Add</button>
+            </div>
+            <div class="scoreboard-save-info">Your score saves automatically when you close or refresh.</div>
+        </div>
+    </div>
+
+    <!-- Name Modal -->
+    <div class="name-modal" id="name-modal">
+        <div class="name-modal-content">
+            <h2>🍌 What's your name?</h2>
+            <input type="text" id="player-name-input" placeholder="Enter your name" maxlength="15" autofocus>
+            <button id="name-submit-btn">Let's Go!</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
