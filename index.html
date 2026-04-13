@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Banana Clicker - Click anywhere to spawn bananas.">
+    <title>Banana Clicker</title>
+    <!-- Modern Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Physics Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="glass-container">
+        <h1>Go Bananas!</h1>
+        <p>Click anywhere on the screen</p>
+        <div id="counter" class="counter">Spawned: 0</div>
+    </div>
+    <div class="lifetime-menu" id="life-menu">
+        <div class="lifetime-btn" data-life="5">5s</div>
+        <div class="lifetime-btn" data-life="10">10s</div>
+        <div class="lifetime-btn" data-life="20">20s</div>
+        <div class="lifetime-btn active" data-life="30">30s</div>
+    </div>
+    <div class="multiplier-menu" id="mul-menu">
+        <div class="multiplier-btn active" data-mult="1">1x</div>
+        <div class="multiplier-btn" data-mult="2">2x</div>
+        <div class="multiplier-btn" data-mult="4">4x</div>
+        <div class="multiplier-btn" data-mult="8">8x</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
