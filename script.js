@@ -129,9 +129,22 @@ document.querySelectorAll('.lifetime-btn').forEach(btn => {
     btn.addEventListener('touchstart', setLife, { passive: false });
 });
 
+// Clear All button
+const clearBtn = document.getElementById('clear-btn');
+function clearAllBananas(e) {
+    if (e) e.stopPropagation();
+    for (let i = bananas.length - 1; i >= 0; i--) {
+        Composite.remove(world, bananas[i].body);
+        bananas[i].element.remove();
+    }
+    bananas.length = 0;
+}
+clearBtn.addEventListener('mousedown', clearAllBananas);
+clearBtn.addEventListener('touchstart', clearAllBananas, { passive: false });
+
 // Changed from click to mousedown so it feels instananeous, and ignores if clicking an existing banana
 document.addEventListener('mousedown', (e) => {
-    if (e.target.closest('.multiplier-menu') || e.target.closest('.lifetime-menu')) return;
+    if (e.target.closest('.multiplier-menu') || e.target.closest('.lifetime-menu') || e.target.closest('.clear-btn')) return;
     if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
     // Query bodies under mouse to see if we are trying to drag one
     const bodies = Matter.Query.point(Composite.allBodies(world), { x: e.clientX, y: e.clientY });
@@ -146,7 +159,7 @@ document.addEventListener('mousedown', (e) => {
 });
 
 document.addEventListener('touchstart', (e) => {
-    if (e.target.closest('.multiplier-menu') || e.target.closest('.lifetime-menu')) return;
+    if (e.target.closest('.multiplier-menu') || e.target.closest('.lifetime-menu') || e.target.closest('.clear-btn')) return;
     if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
     let spawned = false;
     for(let i = 0; i < e.changedTouches.length; i++) {
