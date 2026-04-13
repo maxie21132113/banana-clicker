@@ -164,3 +164,75 @@ p {
     color: white;
     border-color: #0072ff;
 }
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 600px) {
+    .glass-container {
+        padding: 1.5rem 2rem;
+        border-radius: 16px;
+        max-width: 70vw;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.4rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .counter {
+        margin-top: 0.8rem;
+        font-size: 1.1rem;
+        padding: 0.3rem 1rem;
+    }
+
+    /* Move menus to bottom as horizontal rows */
+    .lifetime-menu,
+    .multiplier-menu {
+        position: fixed;
+        top: auto;
+        left: 0;
+        right: 0;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .lifetime-menu {
+        bottom: 3.5rem;
+    }
+
+    .multiplier-menu {
+        bottom: 0.5rem;
+    }
+
+    .lifetime-btn,
+    .multiplier-btn {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+
+    .banana {
+        font-size: 3.5rem !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .glass-container {
+        padding: 1.2rem 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .lifetime-btn,
+    .multiplier-btn {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
+    }
+}
